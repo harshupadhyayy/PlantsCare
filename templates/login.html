@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Plants Care Login</title>
+
+    <link rel="shortcut icon" href="../static/login_assets/images/fav.jpg">
+    <link rel="stylesheet" href="../static/login_assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/login_assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/login_assets/css/style.css" />
+    
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-10 login-box">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-7 log-det">
+                            <div class="small-logo">
+                                <i class="fab fa-pagelines"></i> Plants Care
+                            </div>
+                            <h2>Sign in to Plants Care</h2>
+                            <div class="row">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            
+                            
+                            <div class="text-box-cont">
+                                <form action="{{ url_for('login') }}" method="post">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="Username"placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                     <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control" name="Password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="row">
+                                        <p class="forget-p"><a href="{{url_for('sendpassword')}}">Forgot Password ?</a></p>
+                                    </div>
+                                    <div class="ditk-inf sup-oi">
+                                        <p>{{ msg }}</p>
+                                    </div>
+                                    <div class="input-group center mb-3">
+                                        <button type="submit" class="btn btn-success btn-round">SIGN IN</button>
+                                    </div>
+                                </form>
+                                    
+                            </div>
+                            
+
+
+                        </div>
+                        <div class="col-lg-4 col-md-5 box-de">
+                            <div class="ditk-inf">
+                                <h2 class="w-100">Don't Have an Account ?</h2>
+                                <p>Simply Create your account by clicking the Signup Button</p>
+                                <a href="{{ url_for('register') }}">
+                                <button type="button" class="btn btn-outline-light">SIGN UP</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../static/login_assets/js/jquery-3.2.1.min.js"></script>
+<script src="../static/login_assets/js/popper.min.js"></script>
+<script src="../static/login_assets/js/bootstrap.min.js"></script>
+<script src="../static/login_assets/js/script.js"></script>
+
+
+</html>

@@ -1,0 +1,13 @@
+{% include "header.html" %}
+<body>
+    <h1>Tables</h1>
+    <ul>
+        <li><a href="{{ url_for('adminusers')}}">Users</a></li>
+        <li><a href="{{ url_for('adminplants')}}">Plant</a></li>
+        <li><a href="{{ url_for('adminplantdetails')}}">Healthy Plant Details</a></li>
+        <li><a href="{{ url_for('adminsearchdisease')}}">Unhealthy Plant Details</a></li>
+    </ul>
+
+    <a href="{{ url_for('adminlogout') }}">Logout</a>
+</body>
+</html>

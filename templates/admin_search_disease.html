@@ -1,0 +1,224 @@
+
+{% include "header.html" %}
+
+<link href="{{url_for('static', filename = 'admin_assets/css/bootstrap.min.css')}}" rel="stylesheet">
+
+{% block body %}
+<div class="container">
+
+    <div class="row">
+
+        <div class="col md-12">
+
+
+
+            <h2>Plant Details List <button type="button" class="btn btn-success  pull-right" data-toggle="modal" data-target="#myModal">Add Plant Details Data</button></h2>
+
+            <a href="{{ url_for('adminlogout') }}">Logout</a>
+
+
+    {%with messages = get_flashed_messages()%}
+
+    {%if messages%}
+
+    {% for message in messages %}
+
+    <div class="alert alert-success alert-dismissable" role="alert">
+
+     <button type="button" class="close" data-dismiss="alert" aria-label ="close">
+
+         <span aria-hidden="true">&times;</span>
+
+     </button>
+        {{message}}
+
+
+    </div>
+
+
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    <div class="container">
+      <h1>search entry in disease table:</h1> 
+      <form action="/admindiseasedetails" method="post">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Label</label>
+            <input type="text" class="form-control" name="label" placeholder="Enter username">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <p>{{ err }}</p>
+        </form>
+  </div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+
+
+   <div class="modal-dialog">
+
+
+      <div class="modal-content">
+
+
+         <div class="modal-header">
+
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+
+            <h4 class="modal-title">Please Insert Data</h4>
+
+
+         </div>
+
+
+         <div class="modal-body">
+
+
+            <form action="{{ url_for('insertdiseasedetails') }}" method="POST">
+
+
+               <div class="form-group">
+
+
+                  <label>Label:</label>
+                  <input type="text" class="form-control" name="label" required="1">
+
+
+               </div>
+
+
+               <div class="form-group">
+
+
+                <label>Disease Name:</label>
+
+                <input type="text" class="form-control" name="disease_name" required="1">
+
+
+               </div>
+
+
+               <div class="form-group">
+
+
+                <label>Plant Name:</label>
+
+                <input type="text" class="form-control" name="plant_name" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                <label>Scientific Name:</label>
+
+                <input type="text" class="form-control" name="scientific_name" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                <label>Pathogen:</label>
+
+                  <input type="text" class="form-control" name="pathogen" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                <label>Symptoms:</label>
+
+                  <input type="text" class="form-control" name="symptoms" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                <label>Host Name:</label>
+
+                <input type="text" class="form-control" name="host_name" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+                <label>Trigger Details:</label>
+
+                <input type="text" class="form-control" name="trigger_details" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+                
+                <label>Biological Controls:</label>
+
+                <input type="text" class="form-control" name="bio_controls" required="1">
+
+
+               </div>
+               <div class="form-group">
+
+                <label>Chemical Controls:</label>
+
+                <input type="text" class="form-control" name="chem_controls" required="1">
+
+
+               </div>
+               <div class="form-group">
+                <label>Measures:</label>
+
+                <input type="text" class="form-control" name="measures" required="1">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                  <button class="btn btn-primary" type="submit">Insert Data</button>
+
+
+               </div>
+
+
+            </form>
+
+
+         </div>
+
+
+         <div class="modal-footer">
+
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+         </div>
+
+
+      </div>
+
+
+   </div>
+
+</div>
+
+
+{% endblock %}
+
+
+<script type="text/javascript" src="{{url_for('static', filename='admin_assets/js/jquery-3.2.1.min.js') }}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename = 'admin_assets/js/bootstrap.min.js')}}"></script>
